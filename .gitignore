@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.data/
+.env*
+!.env.example
+
+.DS_Store
+/immersive-3d-soda-website.zip

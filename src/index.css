@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Baloo 2", "Arial Rounded MT Bold", ui-rounded, "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-navy: #0b1b5e;
+  --color-blue: #2340e8;
+  --color-fizz: #ff7a1a;
+  --color-cream: #fff4e8;
+  --color-peach: #ffd9bf;
+  --color-sky: #cde4ff;
+  --color-red: #ff3b30;
+}
+
+html {
+  background: #ffd9bf;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: #0b1b5e;
+  background: linear-gradient(180deg, #ffe6d2 0%, #ffd2b3 100%);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+:focus-visible {
+  outline: 3px solid #2340e8;
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-16px) rotate(calc(var(--r, 0deg) + 6deg)); }
+}
+@keyframes float-b {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(14px) rotate(calc(var(--r, 0deg) - 8deg)); }
+}
+.float-a { animation: float-a 6s ease-in-out infinite; }
+.float-b { animation: float-b 7.5s ease-in-out infinite; }
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee { animation: marquee 28s linear infinite; }
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.pop { animation: pop 0.25s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .float-a, .float-b, .marquee { animation: none !important; }
+  * { transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+[data-testid="can-canvas"],
+[data-testid="can-canvas"] * {
+  pointer-events: none !important;
+}
