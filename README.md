@@ -1,5 +1,7 @@
 # Fizz Theory
 
+[Visit the live Fizz Theory storefront](https://fizz-theory.vercel.app)
+
 React and Vite storefront with a same-origin Node API and SQLite. Use Node 22.14 or newer. Run `npm ci` followed by `npm run dev`. Run `npm exec -- tsc --noEmit`, `npm run build`, and `npm run preview` to inspect the release build locally. Both Vite commands include the API. Serving only the contents of dist will omit it.
 
 ## Local data
